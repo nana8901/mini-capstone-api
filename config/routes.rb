@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/products/all" => "products#all_products"
+  get "/products/:id" => "products#product_number"
 end
