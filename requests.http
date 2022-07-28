@@ -11,8 +11,8 @@ PATCH http://localhost:3000/products/4
 Content-Type: application/json
 
 {
-  "name": "somechair",
-  "price": 43,
-  "image_url": "thatchair.jpg",
-  "description": "definitely not a chair"
+  "name": "a chair",
+  "price": null,
+  "image_url": null,
+  "description": null
 }
