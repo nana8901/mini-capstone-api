@@ -1,9 +1,18 @@
-POST http://localhost:3000/products
+# POST http://localhost:3000/products
+# Content-Type: application/json
+
+# {
+#   "name": "not-thischair",
+#   "price": 32,
+#   "image_url": "notreally.jpg",
+#   "description": "definitely not a chair"
+# }
+PATCH http://localhost:3000/products/4
 Content-Type: application/json
 
 {
-  "name": "not-thischair",
-  "price": 32,
-  "image_url": "notreally.jpg",
+  "name": "somechair",
+  "price": 43,
+  "image_url": "thatchair.jpg",
   "description": "definitely not a chair"
 }
