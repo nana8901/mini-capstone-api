@@ -1,18 +1,20 @@
-# POST http://localhost:3000/products
-# Content-Type: application/json
-
-# {
-#   "name": "not-thischair",
-#   "price": 32,
-#   "image_url": "notreally.jpg",
-#   "description": "definitely not a chair"
-# }
-PATCH http://localhost:3000/products/4
+POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name": "a chair",
-  "price": null,
-  "image_url": null,
-  "description": null
+  "name": "not-maybe-a-chair",
+  "price": 33,
+  "image_url": "not-here.jpg",
+  "description": "definitely not a chair"
 }
+
+# PATCH http://localhost:3000/products/4
+# Content-Type: application/json
+
+# {
+#   "name": "a chair",
+#   "price": null,
+#   "image_url": null,
+#   "description": null
+# }
+# DELETE http://localhost:3000/products/3

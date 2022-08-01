@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   
   def index
-    render json: [Product.all]
+    products = Product.all
+    render json: products.as_json
   end
 
   def show
@@ -32,5 +33,11 @@ class ProductsController < ApplicationController
     product.save
     render json: product.as_json
   end
+  def destroy
+    product = Product.find_by(id: params[:id])
+    product.destroy
+    render json: {confirmed: "Item #{params[:id]} deleted."}
+  end
+
 
 end 
