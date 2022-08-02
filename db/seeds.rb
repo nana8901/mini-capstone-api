@@ -1,13 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-newone = Product.new{
-  name: "stuff"
-  price: 8
-  image_url: "stuff.png"
-  description: "It's just stuff."
-}
+Product.create!([
+  {name: "doorway", price: "16.0", image_url: "door.jpg", description: "it's a door", stock: nil},
+  {name: "bowl", price: "7.0", image_url: "bowl.png", description: "a plain bowl. Unexciting.", stock: nil},
+  {name: "not-chair", price: "31.0", image_url: "chair.jpg", description: "a comfortable chair", stock: nil},
+  {name: "not-chair", price: "32.0", image_url: "not-chair.jpg", description: "definitely not a chair", stock: nil},
+  {name: "not-mychair", price: "32.0", image_url: "not-.jpg", description: "definitely not a chair", stock: nil},
+  {name: "not-thischair", price: "32.0", image_url: "notreally.jpg", description: "definitely not a chair", stock: nil},
+  {name: "screenn", price: "175.0", image_url: "screen.njpg", description: "A computer screenn for desktops", stock: nil},
+  {name: "not-thischair", price: "32.0", image_url: "notreally.jpg", description: "definitely not a chair", stock: nil},
+  {name: "not-maybe-a-chair", price: "33.0", image_url: "not-here.jpg", description: "definitely not a chair", stock: nil}
+])
