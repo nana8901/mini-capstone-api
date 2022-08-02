@@ -1,6 +1,5 @@
 @products.map do |product|
   {
-    id: product.id,
-    url: product_url(product, format: :json)
+    id: product.id
   }
 end

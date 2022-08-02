@@ -1,14 +1,15 @@
 class ProductsController < ApplicationController
   
   def index
-    products = Product.all
-    render json: products.as_json
+    @products = Product.all
+    # render json: products.as_json
   end
 
   def show
     id = params[:id]
-    product = Product.find_by(id: id)
-    render json: product.as_json(methods:[:friendly_created_at, :is_discounted?, :tax, :total])
+    @product = Product.find_by(id: id)
+    # render json: product.as_json(methods:[:friendly_created_at, :is_discounted?, :tax, :total])
+    render template: "products/show"
   end
 
   def create
