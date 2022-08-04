@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
       image_url: params[:image_url],
       description: params[:description],
       stock: params[:stock]
+      supplier_id: params[:supplier_id]
     )
     # product.save
     
