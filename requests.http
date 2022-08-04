@@ -2,19 +2,23 @@ GET http://localhost:3000/products.json
 # Content-Type: application/json
 
 # {
-#   "name": "not-maybe-a-chair",
-#   "price": 33,
+#   "name": "not-that-chair",
+#   "price": 13,
 #   "image_url": "not-here.jpg",
-#   "description": "definitely not a chair"
+#   "description": "definitely not a chair",
+#   "stock": 2
 # }
 
-# PATCH http://localhost:3000/products/4
-# Content-Type: application/json
+PATCH http://localhost:3000/products/5
+Content-Type: application/json
 
-# {
-#   "name": "a chair",
-#   "price": null,
-#   "image_url": null,
-#   "description": null
-# }
+{
+  "name": "a chair",
+  "price": 22,
+  "image_url": null,
+  "description": null
+}
+
+
+
 # DELETE http://localhost:3000/products/3

@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     # render json: products.as_json
+    render template: "products/index"
   end
 
   def show
@@ -19,9 +20,15 @@ class ProductsController < ApplicationController
       price: params[:price],
       image_url: params[:image_url],
       description: params[:description],
+      stock: params[:stock]
     )
-    product.save
-    render json: {new_product: product}
+    # product.save
+    
+    if product.save
+      render json: {new_product: product} 
+    else
+      render json: {error: "Something went wrong, try again?"} 
+    end
   end
 
   def update
@@ -31,14 +38,17 @@ class ProductsController < ApplicationController
     product.price = params[:price] || product.price
     product.image_url = params[:image_url] || product.image_url
     product.description = params[:description] || product.description
-    product.save
-    render json: product.as_json
+    if product.save
+      render json: {updated: product.as_json}
+    else
+      render json: {error: "Something went wrong, try again?"}
+    end
   end
+
   def destroy
     product = Product.find_by(id: params[:id])
     product.destroy
     render json: {confirmed: "Item #{params[:id]} deleted."}
   end
-
 
 end 
