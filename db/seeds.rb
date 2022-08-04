@@ -9,7 +9,19 @@
 #   {name: "not-thischair", price: "32.0", image_url: "notreally.jpg", description: "definitely not a chair", stock: 1},
 #   {name: "not-maybe-a-chair", price: "33.0", image_url: "not-here.jpg", description: "definitely not a chair", stock: 1}
 # ])
-Supplier.create!([
-  {name: "Ikea", email: "Ikea@ikea.com", phone_number: "6298343"},
-  {name: "Wood Press Co", email: "WoodPress@Press.com", phone_number: "8888888888"}
+# Supplier.create!([
+#   {name: "Ikea", email: "Ikea@ikea.com", phone_number: "6298343"},
+#   {name: "Wood Press Co", email: "WoodPress@Press.com", phone_number: "8888888888"}
+# ])
+images.create!([
+  {url: "door.jpg", product_id: 1},
+  {url: "bowl.png", product_id: 2},
+  {url: "chair.jpg", product_id: 5},
+  {url: "stuff", product_id: 1},
+  {url: "stuff", product_id: 1},
+  {url: "stuff", product_id: 1},
+  {url: "stuff", product_id: 1},
+  {url: "stuff", product_id: 1},
+  {url: "stuff", product_id: 1}
+
 ])

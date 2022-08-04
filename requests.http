@@ -1,4 +1,4 @@
-GET http://localhost:3000/products.json
+GET http://localhost:3000/products/2.json
 # Content-Type: application/json
 
 # {
@@ -9,15 +9,15 @@ GET http://localhost:3000/products.json
 #   "stock": 2
 # }
 
-PATCH http://localhost:3000/products/5
-Content-Type: application/json
+# PATCH http://localhost:3000/products/5
+# Content-Type: application/json
 
-{
-  "name": "a chair",
-  "price": 22,
-  "image_url": null,
-  "description": null
-}
+# {
+#   "name": "a chair",
+#   "price": 22,
+#   "image_url": null,
+#   "description": null
+# }
 
 
 

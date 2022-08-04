@@ -18,9 +18,8 @@ class ProductsController < ApplicationController
     product = Product.new(
       name: params[:name],
       price: params[:price],
-      image_url: params[:image_url],
       description: params[:description],
-      stock: params[:stock]
+      stock: params[:stock],
       supplier_id: params[:supplier_id]
     )
     # product.save
@@ -37,7 +36,6 @@ class ProductsController < ApplicationController
     product = Product.find_by(id: params[:id])
     product.name = params[:name] || product.name
     product.price = params[:price] || product.price
-    product.image_url = params[:image_url] || product.image_url
     product.description = params[:description] || product.description
     if product.save
       render json: {updated: product.as_json}

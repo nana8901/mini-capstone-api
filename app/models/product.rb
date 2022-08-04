@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
+  has_many :image
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :price, presence: true
@@ -25,8 +27,4 @@ class Product < ApplicationRecord
     return price + tax
   end
   
-  def supplier
-    supplier = Supplier.find_by(id: supplier_id)
-    return supplier 
-  end
 end
