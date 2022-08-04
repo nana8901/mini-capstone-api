@@ -7,5 +7,7 @@ class CreateSuppliers < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+    add_column :products, :supplier, :integer
+
   end
 end
