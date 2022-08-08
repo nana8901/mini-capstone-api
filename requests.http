@@ -29,11 +29,11 @@
 # }
 
 
-POST http://localhost:3000/orders.json
+GET http://localhost:3000/orders.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjAwNzIwNDZ9.vLnFuD8wdYCTyAwRDJ0461aCunqFx0fLnL9-3oVBBsU
-Content-Type: application/json
+# Content-Type: application/json
 
-{
-  "product_id": 8,
-  "quantity": 2
-}
+# {
+#   "product_id": 8,
+#   "quantity": 2
+# }
