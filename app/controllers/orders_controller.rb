@@ -20,6 +20,6 @@ class OrdersController < ApplicationController
   def index
     user = current_user
     orders = Order.where(user_id: user.id)
-    render orders.as_json
+    render json: {orders: orders}
   end
 end
