@@ -1,13 +1,12 @@
-GET http://localhost:3000/products/2.json
-# Content-Type: application/json
+POST http://localhost:3000/users
+Content-Type: application/json
 
-# {
-#   "name": "not-that-chair",
-#   "price": 13,
-#   "image_url": "not-here.jpg",
-#   "description": "definitely not a chair",
-#   "stock": 2
-# }
+{
+   "name": "Test name",
+  "email": "test@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
 
 # PATCH http://localhost:3000/products/5
 # Content-Type: application/json
