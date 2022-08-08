@@ -2,3 +2,11 @@ has to have at least 2 seperate web pages
 each will display at least one product
 one will have multiple products, one will have just a singular product with more detail
 use database read skill for both
+
+orders (no cart)
+make post with product ID, quantity
+include all financials necessary; total pre tax, total post tax, etc
+database of orders with all info? product ID
+include user
+(not confirming financials, shipping, etc: just backend)
+database of 
