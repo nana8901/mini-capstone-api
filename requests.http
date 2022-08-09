@@ -24,16 +24,19 @@
 # Content-Type: application/json
 
 # {
-#   "email": "test@test.com",
+#   "email": "bobby@bob.com",
 #   "password": "password"
 # }
 
 
-GET http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjAwNzIwNDZ9.vLnFuD8wdYCTyAwRDJ0461aCunqFx0fLnL9-3oVBBsU
+# POST http://localhost:3000/users.json
 # Content-Type: application/json
 
 # {
-#   "product_id": 8,
-#   "quantity": 2
+#   "name": "bobby",
+#   "email": "bobby@bob.com",
+#   "password": "password","password_confirmation": "password"
 # }
+
+# GET http://localhost:3000/orders.json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjAxNTQzMjl9.Ra6i0SSRee8B3xoKAHFjmp9v7wz8t274UlYlkejkAew

@@ -22,4 +22,7 @@ class ApplicationController < ActionController::API
       render json: {}, status: :unauthorized
     end
   end
+
+  # def authenticate_user
+  #   unless current_user &&
 end
