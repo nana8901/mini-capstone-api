@@ -1,4 +1,7 @@
 class SuppliersController < ApplicationController
+
+  before_action :authenticate_admin
+  
   def index
     @suppliers = Product.all
     render json: @suppliers.as_json
