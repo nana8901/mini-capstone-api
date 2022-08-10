@@ -1,22 +1,28 @@
-# POST http://localhost:3000/users
-# Content-Type: application/json
+ @bobby_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjAxNTc5ODF9.yMP-W6P7VySbqZYkpuQ5FzgL5z2ZgjYmqmZdnzlyD88
+ @test_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjAxNTgwMDh9.sZbIXqSoDKvjoNkMVJtJqPsaXHtyFU5bMcsZvObi2d0
 
-# {
-#    "name": "Test name",
-#   "email": "test@test.com",
-#   "password": "password",
-#   "password_confirmation": "password"
-# }
+# # POST http://localhost:3000/users
+# # Content-Type: application/json
 
-# PATCH http://localhost:3000/products/5
-# Content-Type: application/json
+# # {
+# #    "name": "Test name",
+# #   "email": "test@test.com",
+# #   "password": "password",
+# #   "password_confirmation": "password"
+# # }
 
-# {
-#   "name": "a chair",
-#   "price": 22,
-#   "image_url": null,
-#   "description": null
-# }
+POST http://localhost:3000/products
+Authorization: Bearer {{bobby_jwt}}
+Content-Type: application/json
+
+{
+  "name": "Another more product",
+  "price": 2.40,
+  "image_url": "more!MORE!.jpeg",
+  "description": "Let's make more product, for testing",
+  "stock": 2,
+  "supplier_id": 1
+}
 
 
 
@@ -24,7 +30,7 @@
 # Content-Type: application/json
 
 # {
-#   "email": "bobby@bob.com",
+#   "email": "test@test.com",
 #   "password": "password"
 # }
 
@@ -39,4 +45,5 @@
 # }
 
 # GET http://localhost:3000/orders.json
-# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjAxNTQzMjl9.Ra6i0SSRee8B3xoKAHFjmp9v7wz8t274UlYlkejkAew
+# Authorization: Bearer {{test_jwt}}
+
