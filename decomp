@@ -10,3 +10,13 @@ database of orders with all info? product ID
 include user
 (not confirming financials, shipping, etc: just backend)
 database of 
+
+
+orders(with cart)
+model CartedProducts
+  - has user_id, product_id, quantity, order_id, status
+    * status should be carted, purchased, removed
+  - will belong_to users, product, order
+    * user has_many :carted_products
+    * product has_many :carted_products
+    * orders has_many :carted_products
