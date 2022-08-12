@@ -1,7 +1,6 @@
 class CartedProductsController < ApplicationController
   
   def create
-    p params
     cartprod = CartedProduct.new(
       user_id: current_user.id,
       product_id: params[:product_id],
@@ -17,8 +16,9 @@ class CartedProductsController < ApplicationController
     end
   end
 
-  def remove
-    code 
+  def index
+    carted = current_user.carted_products
+    render json: carted.as_json
   end
 
   def purchase
