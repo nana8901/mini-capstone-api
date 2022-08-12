@@ -2,18 +2,36 @@ class OrdersController < ApplicationController
   before_action :authenticate_user
   
   def create  
-    product = Product.find_by(id: params[:product_id])
-    order = Order.new({
+    allcartprod = current_user.carted_products
+    bought = []
+    subtotal = 0.0
+    tax = 0.0
+    total = 0.0
+
+    allcartprod.each do |prod|
+      if prod[:status] == "carted"
+        to_add = Product.find_by(id: prod.product_id)
+        bought << prod
+        subtotal += (to_add.price * prod.quantity)
+        tax += (to_add.tax * prod.quantity)
+        total += (to_add.total * prod.quantity)
+      end
+    end
+
+    order = Order.new(
       user_id: current_user.id,
-      product_id: params[:product_id],
-      quantity: params[:quantity],
-      subtotal: product.price * params[:quantity],
-      tax: product.tax * params[:quantity],
-      total: product.total * params[:quantity]
-    }) 
+      subtotal: subtotal,
+      tax: tax,
+      total: total
+    )
 
     if order.save
-      render json: {success: "ordered #{params[:quantity]}"}
+      bought.each do |changing|
+        changing[:status] = "purchased"
+        changing[:order_id] = order.id
+        changing.save
+      end
+      render json: {success: order.as_json, theprods: current_user.carted_products.as_json}
     else
       render json: {error: "Something went wrong, try again?"}
     end
